@@ -3,6 +3,7 @@ import Atributo.AtributoOperacion;
 import Atributo.AtributoSimple;
 import Comparator.ComparatorCompuesto;
 import Comparator.ComparatorCriterioSimple;
+import Comparator.ComparatorNombre;
 import Entidades.Enfrentable;
 import Entidades.Juego;
 import Entidades.Liga;
@@ -51,7 +52,7 @@ public class Main {
         //Mock de el resto
         e2.addAtributo("Astucia", new AtributoSimple(70f));
         e3.addAtributo("Astucia", new AtributoSimple(30f));
-        e4.addAtributo("Astucia", new AtributoSimple(93f));
+        e4.addAtributo("Astucia", new AtributoSimple(96f));
         e5.addAtributo("Astucia", new AtributoSimple(96f));
 
         Liga l1 = new Liga("Liga 1", "Los Buenos");
@@ -96,10 +97,18 @@ public class Main {
 //            System.out.println(vencedor.getNombreFantasia() + vencedor.getValorAtributo("Astucia"));
 //        }
 
-        var c = new ComparatorCompuesto();
-        c.addComparator()
-//        LISTAR POR CRITERIOS
-        juego.ordenarPersonajes();
+
+//        // LISTAR POR CRITERIO COMPUESTO
+//
+//        var c = new ComparatorCompuesto();
+//        c.addComparator(new ComparatorCriterioSimple("Astucia"));
+//        c.addComparator(new ComparatorNombre().reversed());
+//        var ordenada =  juego.ordenarPersonajes(c);
+//
+//        ordenada.forEach((elem)-> System.out.println(elem.getNombre() +" " + elem.getValorAtributo("Astucia")));
+//        System.out.println("Notar como moriarty y Lex empatan en el atributo, desempatan por nombre, pero como esta reversed queda M antes que L ");
+//
+////
 
     }
 

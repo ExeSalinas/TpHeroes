@@ -30,17 +30,17 @@ public class Juego {
         return true;
     }
 
-    public List<Personaje> ordenarPersonajes ( Comparator<Enfrentable> c) {
-
-        List<Personaje> ordenada = new LinkedList<>();
-        enfrentables.stream()
-                .forEach(enfrentable -> ordenada.addAll(enfrentable.odernar(c)));
-        return ordenada;
+    public List<Personaje> ordenarPersonajes(Comparator<Enfrentable> c) {
+        return enfrentables.stream()
+                .flatMap(enfrentable -> enfrentable.odernar(c).stream())
+                .distinct()
+                .sorted(c)
+                .toList();
 
     }
 
     @Override
     public String toString() {
-        return "Juego con Enfrentables: " + enfrentables ;
+        return "Juego con Enfrentables: " + enfrentables;
     }
 }

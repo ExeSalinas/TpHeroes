@@ -39,7 +39,7 @@ public abstract class Enfrentable {
 
 
     public List<Personaje> odernar(Comparator<Enfrentable> c) {
-       return this.getPersonaje().stream()
+       return this.getPersonaje().stream().distinct()
                .sorted(c)
                .collect(Collectors.toList());
     }

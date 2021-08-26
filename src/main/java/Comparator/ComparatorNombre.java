@@ -4,6 +4,9 @@ import Entidades.Enfrentable;
 
 import java.util.Comparator;
 
+/***
+ *  IMPORTANTE : Ordena por nombre real , no ficticio
+ */
 public class ComparatorNombre  implements Comparator<Enfrentable> {
 
     @Override
